@@ -1,0 +1,22 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+int main()
+{
+    vector<int> adj_list[1005];
+    int n, e;
+    cin >> n >> e;
+    while (e--)
+    {
+        int a, b;
+        cin >> a >> b;
+        adj_list[a].push_back(b);
+        adj_list[b].push_back(a);
+    }
+    int t;
+    cin >> t;
+
+    int size = adj_list[t].size();
+    cout << size;
+    return 0;
+}
