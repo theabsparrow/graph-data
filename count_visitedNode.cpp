@@ -3,15 +3,13 @@ using namespace std;
 
 vector<int> adj_list[1005];
 bool vis[1005];
-int level[1005];
-int parent[1005];
 
 void bfs(int src)
 {
     queue<int> q;
     q.push(src);
     vis[src] = true;
-    level[src] = 0;
+
     while (!q.empty())
     {
         int par = q.front();
@@ -22,8 +20,6 @@ void bfs(int src)
             {
                 q.push(child);
                 vis[child] = true;
-                level[child] = level[par] + 1;
-                parent[child] = par;
             }
         }
     }
@@ -41,20 +37,8 @@ int main()
         adj_list[b].push_back(a);
     }
     memset(vis, false, sizeof(vis));
-    memset(level, -1, sizeof(level));
-    memset(parent, -1, sizeof(parent));
-    int src, dest;
-    cin >> src >> dest;
+     int src;
+    cin >> src;
     bfs(src);
-    int count = 0;
-    for (bool i : vis)
-    {
-        if (i)
-        {
-            count++;
-        }
-    }
-    cout << count << endl;
-
     return 0;
 }
