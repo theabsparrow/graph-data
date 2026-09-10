@@ -6,7 +6,6 @@ bool vis[105][105];
 int level[105][105];
 vector<pair<int, int>> d = {{-1, 0}, {1, 0}, {0, -1}, {0, 1}};
 
-
 bool valid(int i, int j)
 {
     if (i < 0 || i >= n || j < 0 || j >= m)
